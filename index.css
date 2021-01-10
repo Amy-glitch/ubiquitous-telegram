@@ -4,7 +4,7 @@ canvas
    width: height; */
    background-color:green; 
    position: fixed;
-   touch-action:none;
+  
 }
 
 body
@@ -23,7 +23,7 @@ position: fixed;
     left: 50%;
     margin-top: -100px;
     margin-left: -100px;
-    touch-action:none;
+  
 }
 
 #image {
@@ -38,6 +38,6 @@ position: fixed;
   left: 50%;
   margin-top: -96;
   margin-left: -96;
-  touch-action:none;
+  
 
   }

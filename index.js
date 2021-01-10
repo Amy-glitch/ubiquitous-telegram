@@ -31,12 +31,13 @@ let A = Math.atan2(dX,dY) * (180 / Math.PI)+180;
             animateScript(4);
         }
      }, 100); // the above code is executed every 100 ms
-     
+    
 }
 document.ontouchend = function(){
     if (timer) clearInterval(timer);
     idle=true;
-    alert('stop');
+   console.log('end!');
+   alert('k');
 }
 
 document.ontouchmove = function(e){
