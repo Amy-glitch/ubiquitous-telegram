@@ -36,6 +36,7 @@ let A = Math.atan2(dX,dY) * (180 / Math.PI)+180;
 document.ontouchend = function(){
     if (timer) clearInterval(timer);
     idle=true;
+    alert('stop');
 }
 
 document.ontouchmove = function(e){
