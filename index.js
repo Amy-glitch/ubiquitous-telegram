@@ -1,4 +1,4 @@
-console.log('pof');
+
 
 let canv = document.getElementById('can');
 let ctx = canv.getContext('2d');
@@ -14,7 +14,7 @@ let size=0;
 let amm = 50;
 let off =0;
 let cTop=0;
-let cLeft=0;
+let cLeft=500;
 let cx; let cy;
 let timerr =null;
 
@@ -28,11 +28,10 @@ document.ontouchstart = function(e){
         let dY = e.touches[0].clientY  - window.innerHeight/2;
     
         cLeft-=20*Math.sign(dX)*Math.abs(dX)/100;
-        cTop -=20*Math.sign(dY)*Math.abs(dY)/100;
+      cTop -=20*Math.sign(dY)*Math.abs(dY)/100;
 
-        console.log(Math.atan2(dX,dY) * (180 / Math.PI)+180);
-
-
+      
+       
 let A = Math.atan2(dX,dY) * (180 / Math.PI)+180;
         canv.style.top = cTop+'px';
         canv.style.left = cLeft+'px';  
@@ -77,13 +76,16 @@ function fract(n)
     return n %1;
 }
 
+var img = new Image();
+img.src = "nature.png";
+img.onload = draw;
 
 function draw()
 {   
-     canv.width= 10000;
-     canv.height=10000;
-     cLeft = document.body.clientWidth/2 - canv.width/2;
-     cTop= document.body.clientHeight/2 - canv.height/2;
+     canv.width= '10000';
+     canv.height='10000';
+     cLeft = window.innerWidth/2 - canv.width/2 ;
+     cTop= window.innerHeight/2 - canv.height/2;
 
 
      canv.style.left = cLeft;
@@ -105,8 +107,12 @@ function draw()
             world[(x)+':'+(y)] = new Tile();
             world[(x)+':'+(y)].generate(x+xOfff,y);
         }
-        ctx.fillStyle =world[(x)+':'+(y)].getCol();
-        ctx.fillRect(x*size , y*size, size,size );
+  
+            let h=tileref[  world[(x)+':'+(y)].id].x;
+            let i =tileref[  world[(x)+':'+(y)].id].y;
+         ctx.drawImage(img,h*32+1,i*32+1,30,30,x*size, y*size,size,size);
+
+
         }}
 
 }
@@ -115,7 +121,7 @@ let cnt = 1;
 
 function animateScript(n) {
     document.getElementById("image").style.backgroundPosition = 
-    +  -384 * (cnt % 7)+ 'px '+ -384*n+'px';
+    +  -192 * (cnt % 7)+ 'px '+ -192*n+'px';
     cnt += 1;
     }
 
@@ -126,7 +132,7 @@ function animateScript(n) {
 
 
 
-draw(); 
+//draw(); 
 
 
 
@@ -137,7 +143,7 @@ setInterval(() => {
     if (idle == true)
     {
         document.getElementById("image").style.backgroundPosition = 
-        +  -384 * ((ic )% 2) + 'px '+ -384*2+'px';
+        +  -192 * ((ic )% 2) + 'px '+ -192*2+'px';
         ic += 1;
         
     }
