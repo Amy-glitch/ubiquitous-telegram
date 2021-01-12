@@ -1,4 +1,4 @@
-canvas 
+.bck
 {
    /* height: 100%;
    width: height; */
@@ -7,15 +7,33 @@ canvas
   
 }
 
+#lbl
+{
+    position: fixed;
+    top:0px;
+    left: 0px; 
+    z-index:100;
+    font-size: 80px;
+    color: white;
+    font-weight: 700;
+    
+}
+
+img 
+{
+    image-rendering: pixelated;
+}
+
 body
 {
     margin: 0px;
     touch-action:none;
+    background-color: black;
     /* width: 100%;
     height: 100%; */
 }
 
-img
+#char
 {
     z-index:100;
 position: fixed;
@@ -24,6 +42,12 @@ position: fixed;
     margin-top: -100px;
     margin-left: -100px;
   
+}
+
+.entity
+{
+    z-index:50;   
+    position: fixed;
 }
 
 #image {
