@@ -1,7 +1,5 @@
 let world = new World();
 let canv = document.getElementById('can');
-//let ctx = canv.getContext('2d');
-//let world = {};
 let size=0;
 let amm = 50;
 let cTop=0;
@@ -15,15 +13,6 @@ function fract(n)
     return n %1;
 }
 
-
-var img = new Image();
-img.src = "nature.png";
-
-
-
-img.id ='char';
-//img.onload = initDrawWorld;
-
 canv.width= '10000';
 canv.height='10000';
 cLeft = window.innerWidth/2 - canv.width/2 ;
@@ -36,18 +25,23 @@ canv.style.top = cTop+'px';
 canv.style.left = cLeft+'px';     
 
 
-
 let idle = true;
 let ic =1;
 setInterval(() => {
+
+    let c = Math.floor(ic);
+
+    world.animate(c );
     if (idle == true)
     {
-        let c = Math.floor(ic);
+       
         document.getElementById("image").style.backgroundPosition = 
         +  -192 * ((c )% 2) + 'px '+ -192*2+'px';
-        ic += 0.8;
+     
         
     }
+
+    ic += 0.8;
 }, 500);
 
 let cnt = 1;

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 .bck
 {
    /* height: 100%;
@@ -6,6 +7,40 @@
    position: fixed;
   
 }
+
+@keyframes fade {
+    from {opacity: 1; visibility:visible;}
+    to {opacity: 0; visibility: hidden;}
+  }
+
+
+.speechan
+{
+    animation: fade;
+    animation-duration: 7s;
+}
+
+.speech
+{
+    pointer-events: none;
+    
+    font-size: 50px;
+    padding: 20px;
+    z-index: 200;
+    color: white;
+    font-weight: 100;
+    position: fixed;
+    
+    opacity: 0;
+    background-color: black;
+    font-family: 'Patrick Hand SC', cursive;
+    border-radius: 25px;
+    line-height:.7em;
+
+   
+}
+
+
 
 #lbl
 {
@@ -36,7 +71,7 @@ body
 #char
 {
     z-index:100;
-position: fixed;
+    position: fixed;
     top:50%;
     left: 50%;
     margin-top: -100px;
@@ -48,6 +83,7 @@ position: fixed;
 {
     z-index:50;   
     position: fixed;
+    image-rendering: pixelated;
 }
 
 #image {
