@@ -27,8 +27,10 @@ class Entity
         switch(this.thing)
         {
             case 'house':
-                this.div.style.width ='500px';
-                this.div.style.height ='500px';
+                this.div.style.width ='800px';
+                this.div.style.height ='800px';
+                this.sentence='This is my home.';
+                this.div.onclick = this.say.bind(this);
             break;
 
             case 'fence':
@@ -39,7 +41,7 @@ class Entity
             case 'bigpumpkin':
                 this.div.style.width ='200px';
                 this.div.style.height ='200px';
-                this.div.onclick = this.charsay.bind(this);
+                this.div.onclick = this.say.bind(this);
                 this.sentence = 'This pumpkin must grow much bigger to win the annual pumpkin growing contest...';
             break;
 
@@ -49,6 +51,17 @@ class Entity
                 this.div.style.height ='400px';
             break;
 
+            case 'trader':
+                this.div.style.backgroundSize = (832*3)+'px +'+(1344*3)+'px';
+                this.c =2;
+                this.r =10;
+                this.aPixsize = 64;
+                this.div.style.width =this.aPixsize*3+'px';
+                this.div.style.height =this.aPixsize*3+'px';
+                this.div.style.backgroundPosition = -1*this.aPixsize*this.c *3+'px '+-1*this.aPixsize*this.r*3+'px';
+                this.sentence ='My name is Bloom and I sell soil and plant nutriets';
+                this.div.onclick = this.say.bind(this);
+            break;
 
             case 'horse':
                 this.div.style.backgroundSize = (192*3)+'px +'+(256*3)+'px';
@@ -76,15 +89,15 @@ class Entity
 
     idle(c)
     {
-    this.div.style.backgroundPosition = -(c%3)*this.aPixsize*this.c +'px '+-1*this.aPixsize*this.r+'px';
+        this.div.style.backgroundPosition = -1*this.aPixsize*(c%8) *3+'px '+-1*this.aPixsize*this.r*3+'px';
     }
 
     say()
     {
     
     this.lbl.innerHTML=this.sentence;
-    this.lbl.style.top = parseInt(this.div.style.top,10)+'px';
-    this.lbl.style.left = parseInt(this.div.style.left,10)+'px';
+    this.lbl.style.top = (parseInt(this.div.style.top,10)-50)+'px';
+    this.lbl.style.left = (parseInt(this.div.style.left,10)+parseInt(this.div.style.width,10))+'px';
     this.lbl.classList.add('speechan');
     }
 
@@ -111,8 +124,8 @@ class Entity
 
     if (this.charSay == false)
 {
-    this.lbl.style.top =(cTop+5000 -parseInt(this.div.style.height,10)/2+this.Y)+'px' ;
-    this.lbl.style.left =(cLeft+5000-parseInt(this.div.style.width,10)/2+this.X)+'px';}
+    this.lbl.style.top = (parseInt(this.div.style.top,10)-50)+'px';
+    this.lbl.style.left = (parseInt(this.div.style.left,10)+parseInt(this.div.style.width,10))+'px';}
     
     }
 

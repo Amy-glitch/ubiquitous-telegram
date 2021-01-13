@@ -17,7 +17,7 @@
 .speechan
 {
     animation: fade;
-    animation-duration: 7s;
+    animation-duration: 15s;
 }
 
 .speech
@@ -57,6 +57,9 @@
 img 
 {
     image-rendering: pixelated;
+    background-repeat: repeat;
+    background-image: url("Image.png");
+    background-size: 100px 100px;
 }
 
 body

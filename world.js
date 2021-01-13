@@ -4,11 +4,12 @@ class World
 constructor()
 {
 this.entities = {};
-this.entities['1'] = new Entity('house',0,-300);
+this.entities['1'] = new Entity('house',0,-400);
 this.entities['6'] = new Entity('horse',400,-190);
 this.entities['2'] = new Entity('bigpumpkin',0,800);
 this.entities['3'] = new Entity('fence',310,-80);
 this.entities['4'] = new Entity('fence',600,-80);
+this.entities['5'] = new Entity('trader',-800,1200);
 
 
 
