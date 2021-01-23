@@ -9,7 +9,7 @@ timer=setInterval(function(){
  console.log('start');
     x =Math.round(cLeft -(window.innerWidth/2 - canv.width/2));
      y = Math.round(cTop -(window.innerHeight/2 - canv.height/2));
-     lbl.innerHTML ='x: '+-x +' y:'+-y;
+     lbl.innerHTML = 'Size: '+world.entities['2'].stage +'/1000';
      
 let dX = e.touches[0].clientX -window.innerWidth/2;
 let dY = e.touches[0].clientY  - window.innerHeight/2;
@@ -69,3 +69,16 @@ e.preventDefault();
 
 
 }
+
+setInterval(function(){
+
+Object.keys(world.entities).forEach((et)=>{
+
+    //e.grow(); 
+    world.entities[et].grow();
+
+
+});
+
+
+},1000);

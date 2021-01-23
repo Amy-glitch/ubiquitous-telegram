@@ -10,8 +10,38 @@
 <p id='image'></p>
 </div>
 <label id='lbl'>coord</label>
+<label id='money'>coord</label>
 <img width='500' height='900' id='can' class='bck'></img>
 
+<div id='inventory'>
+<div id='slot0' width='100px' class='iitem' id='it' ></div>
+<div id='slot1' class='iitem'></div>
+<div id='slot2' class='iitem'></div>
+<div id='slot3' class='iitem'></div>
+<div  id='slot4'class='iitem'></div>
+
+<div id='shop' class="shop">
+<div class='sitem'>seeds
+    <div class="sprice">$10</div>
+    <div class="sdesc">These are some amazing seeds</div>
+    <button onclick="buySeed()" class="sbtn">Buy</button>
+</div>
+<div class='sitem'>compost
+    <div class="sprice">$50</div>
+    <div class="sdesc">These are some amazing compost</div>
+    <button onclick="buyCom()" class="sbtn"> Buy</button>
+</div>
+<button onclick="exitShop()" class="sexit">Exit Shop</button>
+</div>
+
+<div id='win' class='win'>
+<div style='font-size: 120px; text-align: center; margin-top: 30%; '>You win!</div>
+<p style='font-size: 80px; text-align: center; margin: 40px;'>Lindie the Witch won the annual pumpkin growing competition and was able to pay her magic school loans.</p>
+<button onclick="redo()" style='font-family: "Patrick Hand SC", cursive;margin-left: 25%; width:50%; height: 90px; font-size: 50px;'>Play Again!</button>
+</div>
+
+
+</div>
 
 
 </body>
